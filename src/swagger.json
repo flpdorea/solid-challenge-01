@@ -1,0 +1,63 @@
+{
+    "openapi":"3.0.0",
+    "info":{
+        "title":"User Management Docs",
+        "description":"This is an API for user management.",
+        "version":"1.0.0",
+        "contact":{
+            "email":"felipeldorea@gmail.com"
+        }
+    },
+    "paths":{
+        "/users":{
+            "post":{
+                "tags":[
+                    "Users"
+                ],
+                "summary":"Create a user",
+                "description":"Create a new user",
+                "requestBody":{
+                    
+                }
+            },
+            "get":{
+                "tags":[
+                    "Users"
+                ],
+                "summary":"List all users",
+                "description":"List all users"
+            }
+        },
+        "/users/{user_id}":{
+            "get":{
+                "tags":[
+                    "Users"
+                ],
+                "summary":"Find a specific user",
+                "description":"Find a specific user",
+                "parameters":[
+                    {
+                        "in":"path",
+                        "name":"user_id",
+                        "description":"Desired user id",
+                        "required":true,
+                        "schema":{
+                            "type":"string",
+                            "format":"uuid",
+                            "example":"6087088b-4a0f-4814-8e64-256a713f8fc6"
+                        }
+                    }
+                ]
+            }
+        },
+        "/users/{user_id}/admin":{
+            "patch":{
+                "tags":[
+                    "Users"
+                ],
+                "summary":"Turn a user into admin",
+                "description":"Turn a user into admin"
+            }
+        }
+    }
+}
